@@ -253,6 +253,31 @@ section{padding:96px 0;}
 .archive-grid div{break-inside:avoid; margin-bottom:2px;}
 .archive-grid b{color:var(--ink-soft); font-weight:600;}
 
+/* ---------- portfolio viewer ---------- */
+.portfolio-card{
+  border:1px solid var(--line); background:#fff; padding:20px;
+}
+.portfolio-frame-wrap{
+  position:relative; width:100%; aspect-ratio:1.414/1;
+  border:1px solid var(--line); background:var(--paper-2); overflow:hidden;
+}
+.portfolio-frame-wrap iframe{
+  position:absolute; inset:0; width:100%; height:100%; border:none;
+}
+.portfolio-actions{
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+  margin-top:18px; flex-wrap:wrap;
+}
+.portfolio-note{font-size:12.5px; color:var(--slate); max-width:420px;}
+.btn-primary{
+  display:inline-flex; align-items:center; gap:8px;
+  font-family:'JetBrains Mono', monospace; font-size:12.5px; font-weight:600;
+  letter-spacing:0.02em; text-decoration:none; color:#fff; background:var(--ink);
+  padding:11px 18px; white-space:nowrap; transition:background .15s;
+}
+.btn-primary:hover{background:var(--signal-deep);}
+.btn-primary::after{content:"↗"; font-size:13px;}
+
 /* ---------- skills / awards ---------- */
 .skills-wrap{display:grid; grid-template-columns:1.3fr 1fr; gap:56px;}
 @media(max-width:800px){.skills-wrap{grid-template-columns:1fr;}}
@@ -308,6 +333,7 @@ a:focus-visible, .career-head:focus-visible{outline:2px solid var(--signal); out
       <a href="#timeline">경력타임라인</a>
       <a href="#projects">프로젝트</a>
       <a href="#career">경력상세</a>
+      <a href="#portfolio">포트폴리오</a>
       <a href="#skills">역량·수상</a>
       <a href="#contact">연락처</a>
     </nav>
@@ -643,6 +669,28 @@ a:focus-visible, .career-head:focus-visible{outline:2px solid var(--signal); out
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Portfolio Deck</div>
+      <h2 class="section-title">포트폴리오</h2>
+      <p class="section-sub nowrap">프로젝트별 화면과 작업 과정을 정리한 PDF 포트폴리오입니다. 아래에서 바로 넘겨보거나, 새 탭에서 크게 볼 수 있어요.</p>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-frame-wrap">
+        <iframe src="portfolio.pdf" title="권오정 포트폴리오 PDF" loading="lazy">
+          <p>이 브라우저에서는 PDF 미리보기를 지원하지 않아요. 아래 버튼으로 열어주세요.</p>
+        </iframe>
+      </div>
+      <div class="portfolio-actions">
+        <p class="portfolio-note">모바일이나 일부 브라우저에서는 미리보기가 바로 안 뜰 수 있어요. 그럴 땐 버튼을 눌러 새 탭에서 열어주세요.</p>
+        <a class="btn-primary" href="portfolio.pdf" target="_blank" rel="noopener">새 탭에서 크게 보기</a>
+      </div>
     </div>
   </div>
 </section>
